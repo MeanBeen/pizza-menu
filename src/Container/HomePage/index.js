@@ -9,20 +9,15 @@ import {
   Heading2,
   MenuParagraph,
   PizzaList,
-  Pizza,
-  PizzaImage,
-  PizzaDetails,
-  PizzaName,
-  PizzaDescription,
   Container,
-  PizzaStatus,
-  SoldOutPizza,
   Footer,
   Order,
   Button,
 } from "./style";
+import Pizzas from "../../Component/Pizza";
 
 function HomePage() {
+  // if (pizzaData.filter((data) => data.soldOut)) return;
   return (
     <Container>
       <Header>
@@ -36,6 +31,17 @@ function HomePage() {
         </MenuParagraph>
         <PizzaList>
           {pizzaData.map((data) => (
+            <Pizzas
+              name={data.name}
+              image={data.photoName}
+              price={data.price}
+              descrip={data.ingredients}
+              status={data.soldOut}
+            />
+          ))}
+        </PizzaList>
+        {/* <PizzaList>
+          {pizzaData.map((data) => (
             <Pizza>
               <PizzaImage width={200} src={data.photoName} alt="Pizza" />
               <PizzaDetails>
@@ -45,7 +51,7 @@ function HomePage() {
               </PizzaDetails>
             </Pizza>
           ))}
-        </PizzaList>
+        </PizzaList> */}
       </Menu>
 
       <Footer>

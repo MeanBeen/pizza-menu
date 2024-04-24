@@ -82,6 +82,14 @@ export const PizzaList = styled.ul`
 export const Pizza = styled.li`
   display: flex;
   gap: 3.2rem;
+  &.sold-out {
+    color: #888;
+
+    img {
+      filter: grayscale();
+      opacity: 0.8;
+    }
+  }
 `;
 
 export const PizzaImage = styled.img`
